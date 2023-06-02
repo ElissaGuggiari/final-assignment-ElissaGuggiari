@@ -191,6 +191,19 @@ nav li {
   border-radius: 100%;
 }
 
+.div10 {
+  grid-area: 9 / 11 / 11 / 13;
+  background-color: var(--color-gray);
+  border-radius: 0 0 100% 0;
+}
+
+.div11 {
+  grid-area: 9 / 9 / 11 / 11;
+  background-color: var(--color-gray);
+  border-radius: 0 0 0 100%;
+}
+
+
 .grid-paragraph {
   grid-area: 7 / 12 / 9 / 17;
 }
