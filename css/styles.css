@@ -262,7 +262,7 @@ nav ul {
 .works .work-horizon::before,
 .works .work-dream::before,
 .works .work-tinguely::before,
-.works .work-cards:before {
+.works .work-cards::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -280,7 +280,7 @@ nav ul {
 .works .work-horizon:hover::before,
 .works .work-dream:hover::before,
 .works .work-tinguely:hover::before,
-.works .work-cards:before {
+.works .work-cards::before {
   opacity: 1;
 }
 
@@ -377,6 +377,7 @@ footer {
   justify-content: center;
   background-color: var(--color-dark-gray);
   color: var(--color-white);
+  transition: transform 0.3s ease-out;
 }
 
 .footer-grid {

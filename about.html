@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/gsap.js"></script>
+  <script src="js/ScrollTrigger.js"></script>
+
   <title>About Me</title>
 </head>
 
@@ -157,6 +160,86 @@
       </div>
     </div>
   </footer>
+
+
+  
+<!-- SCRIPT SECTION -->
+
+<script>
+  // console
+  console.log("hello, I am your personal robot");
+  </script>
+
+<script>
+  // Animation for the header
+  const headerTimeline = gsap.timeline({
+    onComplete: () => {
+      // Trigger the grid elements animation once the header animation is complete
+      gridTimeline.play();
+    },
+  });
+
+  headerTimeline.fromTo(
+    "header",
+    { opacity: 0, y: -50 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "header",
+        start: "top 80%",
+        end: "top 50%",
+        toggleActions: "play none none reverse",
+      },
+    }
+  );
+</script>
+
+
+<script>
+  // Animation for the grid elements
+  gsap.from(".grid div", {
+    scale: 0,
+    y: 100,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".grid",
+      start: "top 80%",
+      end: "top 50%",
+      toggleActions: "play none none reverse",
+    },
+    onComplete: function (elements) {
+      gsap.to(elements, {
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+    },
+  });
+</script>
+
+
+<script>
+  // Animation for the footer
+  gsap.from(".footer-grid", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "footer",
+      start: "top 80%",
+      end: "top 50%",
+      toggleActions: "play none none reverse",
+    },
+  });
+</script>
+
 
 </body>
 
