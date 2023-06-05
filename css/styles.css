@@ -7,6 +7,7 @@
   --color-red: #ff0000;
   --color-gray: #BEBEBE;
   --color-dark-gray: #585858;
+  --cell-size: 100px;
 }
 
 /* INITIAL RULES */
@@ -93,8 +94,6 @@ a:hover {
 }
 
 
-
-
 /* HEADER / NAVIGATION */
 header {
   margin: 0;
@@ -126,6 +125,22 @@ nav ul {
   width: 800px;
   left: 1096px;
   top: 10px;
+}
+
+@media (max-width: 1000px) {
+  header {
+    height: auto;
+    width: 100%;
+    position: sticky;
+  }
+  nav ul {
+    display: block; 
+    position: static; 
+    width: auto; 
+    height: auto;
+    left: auto; 
+    top: auto; 
+  }
 }
 
 
@@ -211,11 +226,19 @@ nav ul {
   grid-area: 4 / 12 / 6 / 17;
 }
 
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(var(--cell-size), 100px));
+    grid-template-rows: repeat(auto-fill, minmax(var(--cell-size), 100px));
+  }
+}
+
 /* HOMEPAGE CONTENT */
 
 .content {
   padding: var(--padding);
 }
+
 
 /* HOMEPAGE OVERLAY */
 
@@ -331,6 +354,14 @@ nav ul {
 .softwares {
   grid-area: 3 / 2 / 4 / 3;
   padding: var(--padding);
+}
+
+@media (max-width: 1000px) {
+  .about-me-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: var(--padding);
+  }
 }
 
 

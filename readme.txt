@@ -12,16 +12,39 @@
 ## Description:
 ------------
 This file contains important information and instructions on how to use and navigate through my project.
+A website showcasing information about Elissa Guggiari, a passionate Swiss graphic designer.
 
 ## Usage:
 ------
-- Checking out my portfolio.
+To view and interact with the About Me website, follow these steps:
+- Navigate to the project's directory
+- Open the index.html file in your preferred web browser.
 
 ## Features:
 ---------
-- Feature 1: 
-- Feature 2: 
-- Feature 3: 
+- Header: A navigation menu with links to different sections of the website.
+- Hero Section: A visually appealing section with grid elements and animations.
+- Main Content: A section containing information about the designer and their creative approach.
+- Works Section: A showcase of the designer's projects, including images and descriptions.
+- Footer: A section with contact information and social media links.
+- Responsive Design: The website adapts to different screen sizes.
+
+## Folder Structure:
+-----------------
+index.html: Main HTML file for the website.
+css/: Folder containing the CSS stylesheets.
+js/: Folder containing the JavaScript files (GSAP and ScrollTrigger libraries).
+img/: Folder containing the images used on the website.
+
+## Dependencies:
+-----------------
+GSAP
+ScrollTrigger
+
+## Animation:
+-----------------
+The header, grid elements, and footer have animation effects implemented using GSAP and ScrollTrigger libraries.
+The animations are triggered as the user scrolls down the page.
 
 ## Contributing:
 -------------
@@ -41,16 +64,3 @@ If you encounter any issues or have any suggestions, please open an issue on my 
 --------
 For further information or inquiries, you can reach me by sending me a message to my github.
 Thank you for checking out my project!
-
-
-
-
-```
-TODO
-
-Make sure that the pages are responsive and fluid, so one can enjoy them on any device.
-Use GSAP to create more complex animation sequences. At the end add the GSAP ScrollTrigger to activate the animations on enter or on leave.
-commit often, write descriptive commit messages. 
-Connect the repository with Netlify and provide the link to the pages. 
-Document all of your work in a README.md file saved in the root of your repository, next to the index.html file.
-```
