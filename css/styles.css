@@ -1,13 +1,13 @@
 /* ROOT */
 :root {
   --padding: 24px;
-  /* var(--padding) */
+  --cell-size: 100px;
+
   --color-white: #ffffff;
   --color-black: #000000;
   --color-red: #ff0000;
   --color-gray: #BEBEBE;
   --color-dark-gray: #585858;
-  --cell-size: 100px;
 }
 
 /* INITIAL RULES */
@@ -34,7 +34,7 @@ body {
 h1 {
   margin: 0;
   font-size: 12rem;
-  line-height: 15rem;
+  line-height: 12rem;
 }
 
 h2 {
@@ -53,22 +53,22 @@ h3 {
 
 h4 {
   margin: 0;
-  font-size: 1.25rem; 
-  line-height: 2.5rem; 
+  font-size: 1.25rem;
+  line-height: 2.5rem;
   font-weight: 600;
 }
 
 p {
-  font-size: 1rem; 
-  line-height: 1.5rem; 
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 500;
   text-transform: none;
   text-decoration: none;
 }
 
 a {
-  font-size: 1rem; 
-  line-height: 1.5rem; 
+  font-size: 1rem;
+  line-height: 1.5rem;
   text-decoration: none;
   color: var(--color-white);
 }
@@ -81,7 +81,7 @@ a:hover {
 .a-button {
   font-size: 1.25rem;
   line-height: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
   color: var(--color-black);
   padding: var(--padding);
@@ -122,24 +122,26 @@ nav ul {
   position: absolute;
 
   height: 100px;
-  width: 800px;
-  left: 1096px;
+  right: 0;
   top: 10px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   header {
-    height: auto;
-    width: 100%;
-    position: sticky;
+    height: 200px;
+    justify-content: center ;
   }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
   nav ul {
-    display: block; 
-    position: static; 
-    width: auto; 
-    height: auto;
-    left: auto; 
-    top: auto; 
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
   }
 }
 
@@ -148,10 +150,12 @@ nav ul {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(19, 100px);
-  grid-template-rows: repeat(10, 100px);
+  grid-template-columns: repeat(19, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  aspect-ratio: 19/10;
+  width: 100%;
 }
 
 .gray-square-small {
@@ -194,18 +198,6 @@ nav ul {
   border-radius: 0 100% 0 0;
 }
 
-.gray-semicircle-7 {
-  grid-area: 9 / 18 / 11 / 20;
-  background-color: var(--color-gray);
-  border-radius: 100% 0 0 0;
-}
-
-.gray-circle {
-  grid-area: 3 / 17 / 5 / 19;
-  background-color: var(--color-gray);
-  border-radius: 100%;
-}
-
 .gray-semicircle-5 {
   grid-area: 9 / 11 / 11 / 13;
   background-color: var(--color-gray);
@@ -218,19 +210,24 @@ nav ul {
   border-radius: 0 0 0 100%;
 }
 
+.gray-semicircle-7 {
+  grid-area: 9 / 18 / 11 / 20;
+  background-color: var(--color-gray);
+  border-radius: 100% 0 0 0;
+}
+
+.gray-circle {
+  grid-area: 3 / 17 / 5 / 19;
+  background-color: var(--color-gray);
+  border-radius: 100%;
+}
+
 .grid-paragraph {
   grid-area: 7 / 12 / 9 / 17;
 }
 
 .grid-title {
   grid-area: 4 / 12 / 6 / 17;
-}
-
-@media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(var(--cell-size), 100px));
-    grid-template-rows: repeat(auto-fill, minmax(var(--cell-size), 100px));
-  }
 }
 
 /* HOMEPAGE CONTENT */
@@ -248,15 +245,21 @@ nav ul {
   justify-content: space-between;
 }
 
+.work:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.work:hover img {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
 .works [class^="work-"],
 .works [class^="work-"]:hover {
   position: relative;
   width: 555px;
-  transition: transform 0.3s ease;
-}
-
-.works [class^="work-"]:hover {
-  transform: scale(1.1);
 }
 
 .works [class^="work-"]::before {
@@ -264,16 +267,15 @@ nav ul {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
-.works [class^="work-"]:hover::before,
-.works .work-cards::before {
-  opacity: 1;
-}
+@media (max-width: 600px) {
 
+  .works [class^="work-"],
+  .works [class^="work-"]:hover {
+    width: 80%;
+  }
+}
 
 /* HOMEPAGE FILTERS */
 
@@ -309,6 +311,18 @@ nav ul {
   color: var(--color-white);
 }
 
+@media (max-width: 520px) {
+  .filters ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filters li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
 /* ABOUT ME SECTION */
 
 .about-me-section {
@@ -316,51 +330,66 @@ nav ul {
   padding: var(--padding);
   margin: var(--padding);
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 200px repeat(3, 1fr);
   grid-column-gap: var(--padding);
   grid-row-gap: var(--padding);
+  border-top: 1px solid var(--color-black);
+
 }
 
 .about-me {
-  grid-area: 1 / 1 / 2 / 3;
+  grid-area: 1 / 1 / 2 / 2;
   padding: var(--padding);
 }
 
 .work-experience {
   grid-area: 2 / 1 / 3 / 2;
   padding: var(--padding);
+  border-top: 1px solid var(--color-black);
 }
 
 .education {
   grid-area: 2 / 2 / 3 / 3;
   padding: var(--padding);
+  border-top: 1px solid var(--color-black);
 }
 
 .languages {
   grid-area: 4 / 1 / 5 / 2;
   padding: var(--padding);
+  border-top: 1px solid var(--color-black);
 }
 
 .computer-languages {
   grid-area: 4 / 2 / 5 / 3;
   padding: var(--padding);
+  border-top: 1px solid var(--color-black);
 }
 
 .skills {
   grid-area: 3 / 1 / 4 / 2;
   padding: var(--padding);
+  border-top: 1px solid var(--color-black);
 }
 
 .softwares {
   grid-area: 3 / 2 / 4 / 3;
   padding: var(--padding);
+  border-top: 1px solid var(--color-black);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
   .about-me-section {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     grid-row-gap: var(--padding);
+  }
+  
+  .work-experience,
+  .education,
+  .languages,
+  .computer-languages,
+  .skills,
+  .softwares {
+    grid-area: auto;
   }
 }
 
@@ -408,4 +437,18 @@ footer {
   grid-area: 1 / 3 / 2 / 4;
   justify-self: end;
   padding: var(--padding);
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-rows: auto;
+  }
+  
+  .footer-about,
+  .footer-contact,
+  .footer-socials,
+  .footer-copyright {
+    grid-area: auto;
+    justify-self: center;
+  }
 }

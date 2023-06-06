@@ -20,13 +20,13 @@
     <nav>
       <a href="index.html" class="a-button homepage">ELISSA GUGGIARI</a>
       <ul>
-        <li> <a href="index.html" class="a-button homepage">Homepage</a>
+        <li> <a href="index.html" class="a-button homepage">homepage</a>
         </li>
-        <li> <a href="#" class="a-button projects">Projects</a>
+        <li> <a href="#" class="a-button projects">projects</a>
         </li>
-        <li> <a href="about.html" class="a-button about">About me</a>
+        <li> <a href="about.html" class="a-button about">about me</a>
         </li>
-        <li> <a href="#" class="a-button contact">Contact me</a>
+        <li> <a href="#" class="a-button contact">contact me</a>
         </li>
       </ul>
     </nav>
@@ -53,7 +53,7 @@
   <!-- CONTENT SECTION -->
   <main class="about-me-section">
     <div class="about-me">
-      <h2>about me</h2>
+      <h2>elissa guggiari</h2>
       <p>I am a passionate swiss graphic designer with a keen interest in typography and the power of individual graphic
         characters in communication. My Bachelor’s thesis was an exploration of the synaesthetic properties of letters,
         which helped me develop a unique and personal approach to representing letters through pictures and animations.
@@ -161,87 +161,9 @@
     </div>
   </footer>
 
-
-
   <!-- SCRIPT SECTION -->
-
-  <!-- <script>
-    // GSAP code with a delay
-    setTimeout(function() {
-      // GSAP animation code here
-    }, 500);
-  </script> -->
-
-  <script>
-    // console
-    console.log("hello, I am your personal robot");
-
-    // Animation for the header
-    const headerTimeline = gsap.timeline({
-      onComplete: () => {
-        // Trigger the grid elements animation once the header animation is complete
-        if (gridTimeline) {
-          gridTimeline.play();
-        }
-      },
-    });
-
-    headerTimeline.fromTo(
-      "header",
-      { opacity: 0, y: -50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "header",
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    // Animation for the grid elements
-    const gridTimeline = gsap.timeline();
-
-    gridTimeline.from(".grid div", {
-      scale: 0,
-      y: 100,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".grid",
-        start: "top 80%",
-        end: "top 50%",
-        toggleActions: "play none none reverse",
-      },
-      onComplete: function (elements) {
-        gsap.to(elements, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.in",
-        });
-      },
-    });
-
-    // Animation for the footer
-    gsap.from(".footer-grid", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "footer",
-        start: "top 80%",
-        end: "top 50%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  </script>
+  <script src="js/script.js"></script>
 
 </body>
+
 </html>

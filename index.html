@@ -20,13 +20,13 @@
     <nav>
       <a href="index.html" class="a-button homepage">ELISSA GUGGIARI</a>
       <ul>
-        <li> <a href="index.html" class="a-button homepage">Homepage</a>
+        <li> <a href="index.html" class="a-button homepage">homepage</a>
         </li>
-        <li> <a href="#" class="a-button projects">Projects</a>
+        <li> <a href="#" class="a-button projects">projects</a>
         </li>
-        <li> <a href="about.html" class="a-button about">About me</a>
+        <li> <a href="about.html" class="a-button about">about me</a>
         </li>
-        <li> <a href="#" class="a-button contact">Contact me</a>
+        <li> <a href="#" class="a-button contact">contact me</a>
         </li>
       </ul>
     </nav>
@@ -73,56 +73,56 @@
       </ul>
     </div>
     <section class="works">
-      <div class="work-etro">
+      <div class="work work-etro">
         <a href="#"><img src="img/Cover-Etro.jpg" alt="A laptop displaying the new product page of a dress from Etro."
             width="555px"></a>
         <h3>Etro</h3>
         <p>Minimal, Web Design</p>
       </div>
-      <div class="work-genesis">
+      <div class="work work-genesis">
         <a href="#"><img src="img/Cover-Genesis.jpg"
             alt="Two posters in the streets displaying the upcoming event for Genesis." width="555px"></a>
         <h3>Genesis</h3>
         <p>Design, Web Design</p>
       </div>
-      <div class="work-aplhabet ">
+      <div class="work work-aplhabet ">
         <a href="#"><img src="img/Cover-Synesthetic-Alphabet.jpg" alt="Two books speaking about synesthesia in fonts."
             width="555px"></a>
         <h3>A synesthetic alphabet</h3>
         <p>Art Work, Digital, Illustrator</p>
       </div>
-      <div class="work-voice">
+      <div class="work work-voice">
         <a href="#"><img src="img/Cover-Colour_Voice.jpg" alt="An open pamphlet showing an infographic map."
             width="555px"></a>
         <h3>The Colour of the voice</h3>
         <p>Design, Minimal</p>
       </div>
-      <div class="work-wunderkit">
+      <div class="work work-wunderkit">
         <a href="#"><img src="img/Cover-Wunderkit.jpg" alt="An open classeur showcasing the Wunderkit program."
             width="555px"></a>
         <h3>Wunderkit</h3>
         <p>Design</p>
       </div>
-      <div class="work-horizon">
+      <div class="work work-horizon">
         <a href="#"><img src="img/Cover-Rythmic-Horizons.jpg"
             alt="A closed black booklet showing a cinematic shot of a wire structure." width="555px"></a>
         <h3>Rhythmic horizon of expression</h3>
         <p>Design, Minimal</p>
       </div>
-      <div class="work-dream">
+      <div class="work work-dream">
         <a href="#"><img src="img/Cover-Dream-Shape.jpg"
             alt="Two books resting on their back, graphical element giustapponed to a photography of clouds."
             width="555px"></a>
         <h3>Dream shape</h3>
         <p>Design, Minimal</p>
       </div>
-      <div class="work-tinguely">
+      <div class="work work-tinguely">
         <a href="#"><img src="img/Cover-Tinguely-Museum.jpg"
             alt="A clean and minimalistic brand book for Tinguely Museum." width="555px"></a>
         <h3>Tinguely Museum</h3>
         <p>Design</p>
       </div>
-      <div class="work-cards">
+      <div class="work work-cards">
         <a href="#"><img src="img/Cover-Cards.jpg"
             alt="Several playing cards representing house types layed out on a table." width="555px"></a>
         <h3>House Cards Game</h3>
@@ -163,86 +163,9 @@
   </footer>
 
 
-  
-<!-- SCRIPT SECTION -->
-
-  <!-- <script>
-    // GSAP code with a delay
-    setTimeout(function() {
-      // GSAP animation code here
-    }, 500);
-  </script> -->
-  
-<script>
-  // console
-  console.log("hello, I am your personal robot");
-
-  // Animation for the header
-  const headerTimeline = gsap.timeline({
-    onComplete: () => {
-      // Trigger the grid elements animation once the header animation is complete
-      if (gridTimeline) {
-        gridTimeline.play();
-      }
-    },
-  });
-
-  headerTimeline.fromTo(
-    "header",
-    { opacity: 0, y: -50 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "header",
-        start: "top 80%",
-        end: "top 50%",
-        toggleActions: "play none none reverse",
-      },
-    }
-  );
-
-  // Animation for the grid elements
-  const gridTimeline = gsap.timeline();
-
-  gridTimeline.from(".grid div", {
-    scale: 0,
-    y: 100,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".grid",
-      start: "top 80%",
-      end: "top 50%",
-      toggleActions: "play none none reverse",
-    },
-    onComplete: function (elements) {
-      gsap.to(elements, {
-        scale: 1,
-        duration: 0.3,
-        ease: "power2.in",
-      });
-    },
-  });
-
-  // Animation for the footer
-  gsap.from(".footer-grid", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "footer",
-      start: "top 80%",
-      end: "top 50%",
-      toggleActions: "play none none reverse",
-    },
-  });
-</script>
+  <!-- SCRIPT SECTION -->
+  <script src="js/script.js"></script>
 
 </body>
+
 </html>
